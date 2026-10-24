@@ -1,34 +1,29 @@
-# Mow Bros — design and implementation plan
+# Mow Bros ? revised design plan
 
-## Intent
-Turn a practical garden service into a memorable local brand. Visitors should understand the services, enjoy a small moment of play, and leave with a useful quote request. Brand name is inferred from the workspace. No address, phone number, crew history, customer review, accreditation, service area, or real price has been supplied; do not manufacture them.
+## User direction
+The user selected the slanted paper caption and curved pen arrow as the strongest visual reference and requested a broader change to the fonts and layout. Make annotations part of the visual language throughout the page.
 
-## Creative direction: the outdoor good life
-An independent garden club, with the confidence of a vintage workwear label. Warm cream, deep forest green, acid lime, and a small terracotta accent. Oversized Bricolage Grotesque headlines meet quieter DM Sans body copy and handwritten-style garden annotations. Use generous editorial space, thin rules, asymmetry, one beautiful garden photograph, and custom SVG botanical details. Avoid gradient panels, floating UI dashboards, repetitive feature cards, fake ratings, and gratuitous animations.
+## Creative direction: a garden-shed noticeboard
+Replace the rounded editorial sans / italic serif pairing with condensed workwear lettering (Barlow Condensed), typewritten copy (Space Mono), and handwriting (Caveat). Keep warm paper and dark green, introduce rust-orange pen marks, and reserve lime for the mower stamp and estimate. Use a subtle paper grain, straight-cut paper shapes, tape, imperfect rotations, and ink-like underlines. Annotations should describe or point to a specific thing instead of adding arbitrary ornament.
 
-## Visitor journey
-1. Header: recognisable mower wordmark, concise anchor navigation, quote action.
-2. Hero: “Less chore. More outdoors.” Arch-topped garden image, playful lawn-care stamp, and clear primary action.
-3. Brand ribbon: a short typographic beat communicating the service categories.
-4. Services: numbered, expandable rows with specific inclusions and contextual quote actions.
-5. Lawn playground: pointer/touch mowing with progress; keyboard arrows and a guided-mow button provide equivalent access. Reset supports replay.
-6. How we roll: three concrete steps, presented as an editorial sequence.
-7. Seasonal field notes: four accessible tabs with distinct seasonal priorities; general Australian guidance with no unsourced horticultural instructions.
-8. Closing enquiry prompt, useful FAQ, and honest footer.
+## Composition
+- Hero: huge two-line trade-poster headline, handwritten weekend promise, and a full-width framed garden print. Retain the user's chosen paper caption and white arrow; add a circled lawn note and an arrow to the mower. Remove the arch and category ticker.
+- Services: heading in the margin, a handwritten prompt, and staggered service slips with tape, stamps, and handwritten tags. Preserve native disclosures and contextual quote actions.
+- Lawn playground: large heading across the top, a handwritten instruction that points down into a tilted lawn print, and a vertical label in the margin.
+- Process: replace the uniform three-column treatment with a staggered route and handwritten numbers. Stack the route vertically on mobile.
+- Seasonal guide: a loose pinned note with handwritten heading, individually circled tab selection, and ruled task lines.
+- FAQ: a typewritten ledger beside a handwritten margin remark.
+- Closing: a large poster statement, personal side note, and angled action label.
+- Quote builder: a matching printed job sheet. Preserve all fields, validation, calculation and download behavior.
 
-## Interaction specifications
-- Quote dialog: three steps, service selection, lawn size, visit frequency, live illustrative AUD estimate, then validated contact details. Create a downloadable text request, with explicit confirmation that nothing was sent. Keep entered personal details only in memory, with no persistence or network submission.
-- Services: native details/summary, open first row initially, quote buttons preselect a service.
-- Lawn canvas: deterministic grass field, cell-based cut progress, drag to mow; interpolate pointer positions to avoid gaps; keyboard navigation, accessible progress, guided action, reset, completion state.
-- Garden notes: tabs with keyboard navigation, current season initially selected according to Australian months, focus management and ARIA relationships.
-- Mobile: compact menu, stacked hero, finger-friendly buttons, fluid heading sizes, no horizontal overflow.
-- Motion: subtle hover and enter transitions only, honour reduced-motion preferences.
+## Responsive and access requirements
+Keep headlines within the viewport; change the composition intentionally on phones. Annotations must not cover controls or meaningful content. Maintain visible focus, native dialog behavior, accessible form labels and keyboard tabs, reduced-motion support, and keyboard/guided alternatives for the canvas.
 
-## Technical choices
-Buildless static HTML, CSS, and ES modules. No unnecessary framework or dependencies. Local Node server for preview. Local custom generated garden asset, SVG brand illustrations. CSS grid/flex layouts, native dialog, browser form validation, canvas at device pixel ratio. Font fallbacks remain functional if Google Fonts is unavailable.
+## Scope and honest content
+No business facts, prices, reviews, certifications, or contact details have been supplied. Quote ranges remain illustrative and the download remains local. Preserve the existing Site identity and owner-private audience. No new imagery required.
 
-## Validation and delivery
-Check JavaScript syntax and static asset routes. Browser QA at desktop and mobile sizes, verify quote validation and all steps, download generation, services, seasonal tabs, mobile menu, mowing progress and reset. Inspect screenshots for spacing, clipping, contrast, image balance, and overall character. Publish as an owner-private Site through the supported Sites workflow. Report any deployment or verification limits accurately.
+## Validation
+Review desktop, tablet and mobile screenshots. Check overflow at 1440, 768, 390 and 320 pixels. Exercise service expansion and preselected quote handoff, quote completion, seasonal keyboard navigation, and mowing progress/reset. Re-run JavaScript syntax validation. Publish the exact verified source through Sites.
 
 ## Image production record
 Built-in image generation. Asset: dist/assets/garden-hero.webp.

@@ -8,7 +8,7 @@ From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaS
 
 ## Features
 
-- Responsive editorial layout and custom SVG brand illustrations.
+- Responsive garden-shed noticeboard layout, handwritten annotations, and custom SVG brand illustrations.
 - Local WebP garden photograph generated specifically for the design.
 - Service disclosures with contextual quote selection.
 - Three-step quote request builder, illustrative AUD estimate and plain-text download.
@@ -22,4 +22,4 @@ The business name is inferred from the workspace. Replace demo rates in `dist/ap
 
 ## Source
 
-`dist/index.html`: content and semantics. `dist/style.css`: visual system and responsive layouts. `dist/app.js`: interactions. `.openai/hosting.json`: Sites identity and static deployment configuration.
+`dist/index.html`: content and semantics. `dist/style.css`: visual system and responsive layouts. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.openai/hosting.json`: Sites identity and static deployment configuration.
