@@ -24,3 +24,5 @@ dialog{border-radius:0}.quote-shell h2{font-family:var(--heading);font-size:60px
 
 @media(max-width:650px){.hero-sidebar>.handwritten{font-size:28px;line-height:1}}
 @media(max-width:370px){.hero-sidebar>.handwritten{font-size:24px}}
+
+.hero h1 .headline-intro,.hero h1 .headline-main,.hero h1 .headline-end{display:block;line-height:.83}.hero h1 .headline-intro{font-size:.6em}.hero h1 .headline-main{font-size:1em}.hero h1 .headline-end{font-size:.8em}
