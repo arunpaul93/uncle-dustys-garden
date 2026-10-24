@@ -7,7 +7,7 @@ The user selected the slanted paper caption and curved pen arrow as the stronges
 Replace the rounded editorial sans / italic serif pairing with condensed workwear lettering (Barlow Condensed), typewritten copy (Space Mono), and handwriting (Caveat). Keep warm paper and dark green, introduce rust-orange pen marks, and reserve lime for the mower stamp and estimate. Use a subtle paper grain, straight-cut paper shapes, tape, imperfect rotations, and ink-like underlines. Annotations should describe or point to a specific thing instead of adding arbitrary ornament.
 
 ## Composition
-- Hero: huge two-line trade-poster headline, handwritten weekend promise, and a full-width framed garden print. Retain the user's chosen paper caption and white arrow; add a circled lawn note and an arrow to the mower. Remove the arch and category ticker.
+- Hero: huge two-line trade-poster headline, handwritten promise of more free time, and a full-width framed garden print. Retain the user's chosen paper caption and white arrow; add a circled lawn note and an arrow to the mower. Remove the arch and category ticker.
 - Services: heading in the margin, a handwritten prompt, and staggered service slips with tape, stamps, and handwritten tags. Preserve native disclosures and contextual quote actions.
 - Lawn playground: large heading across the top, a handwritten instruction that points down into a tilted lawn print, and a vertical label in the margin.
 - Process: replace the uniform three-column treatment with a staggered route and handwritten numbers. Stack the route vertically on mobile.
