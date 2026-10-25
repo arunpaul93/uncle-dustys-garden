@@ -2,6 +2,8 @@
 
 ## Current content direction
 
+Arm-joint correction: the stationary body mask follows the inside sleeve edge and extends under the moving elbow, keeping the cuff connected at both ends of the wave. The hand mask follows the thumb/wrist outline to exclude detached shoulder pixels. Checked enlarged neutral, inward and outward wave poses against a contrasting background before publication.
+
 Mascot cache regression: its structural layer geometry is intentionally in `dist/index.html`, alongside the matching layer markup. The body, forearm and hand must all be absolutely positioned and clipped in one frame, including when an older `practical.css` is cached. Deployment fingerprints the entry CSS and JavaScript references using `scripts/version-assets.mjs`. Verified with the prior wrist-only stylesheet deliberately loaded: no duplicate figures; current styles still animate the elbow and wrist before About us opens.
 
 Uncle Dusty may not attend every job. Do not use “a familiar face” or imply that customers will always meet him or receive the same gardener. The hero mascot has no attendance-related caption.
