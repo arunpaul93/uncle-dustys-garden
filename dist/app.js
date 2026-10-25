@@ -9,12 +9,32 @@ menu.addEventListener('click', () => {
 $$('#main-nav a').forEach(a => a.addEventListener('click', () => { menu.setAttribute('aria-expanded', 'false'); $('#main-nav').classList.remove('is-open'); }));
 document.addEventListener('keydown', e => { if(e.key === 'Escape') {menu.setAttribute('aria-expanded','false');$('#main-nav').classList.remove('is-open');} });
 
+// The mascot introduces the business without making attendance claims.
+const mascot = $('.dusty-button'), aboutDialog = $('#about-dialog');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+function syncDialogScroll() { document.body.classList.toggle('dialog-open', !!document.querySelector('dialog[open]')); }
+mascot.addEventListener('click', () => {aboutDialog.showModal(); syncDialogScroll(); $('.about-close').focus();});
+$('.about-close').addEventListener('click', () => aboutDialog.close());
+aboutDialog.addEventListener('click', e => {
+  if (e.target !== aboutDialog) return;
+  const rect = aboutDialog.getBoundingClientRect();
+  if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) aboutDialog.close();
+});
+aboutDialog.addEventListener('close', () => {syncDialogScroll(); if (!document.querySelector('dialog[open]')) mascot.focus();});
+mascot.addEventListener('pointermove', e => {
+  if (reducedMotion.matches || e.pointerType !== 'mouse') return;
+  const rect = mascot.getBoundingClientRect();
+  mascot.style.setProperty('--dusty-lean', `${((e.clientX - rect.left) / rect.width - .5) * 10}deg`);
+});
+mascot.addEventListener('pointerleave', () => mascot.style.removeProperty('--dusty-lean'));
+
 // One-page enquiry: job details and contact information stay in memory.
 const dialog = $('#quote-dialog'), form = $('#quote-form');
 const serviceNames = { mowing:'Lawn mowing & edging', garden:'Hedges & garden care', cleanup:'Weeding & clean-ups', regular:'Regular garden care' };
 let requestText = '', returnFocus, suggestedDetails = '';
 function openQuote(service) {
-  returnFocus = document.activeElement;
+  returnFocus = aboutDialog.open ? mascot : document.activeElement;
+  if (aboutDialog.open) aboutDialog.close();
   form.hidden = false; $('#quote-success').hidden = true;
   const details = $('#job-details');
   if (serviceNames[service] && (!details.value.trim() || details.value === suggestedDetails)) {
@@ -23,13 +43,13 @@ function openQuote(service) {
   dialog.showModal(); document.body.classList.add('dialog-open'); details.focus({preventScroll:true}); dialog.scrollTop = 0;
 }
 $$('[data-quote]').forEach(button => button.addEventListener('click', () => openQuote(button.dataset.quote)));
-$('.dialog-close').addEventListener('click', () => dialog.close());
+$('.dialog-close', dialog).addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', e => {
   if (e.target !== dialog) return;
   const rect = dialog.getBoundingClientRect();
   if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) dialog.close();
 });
-dialog.addEventListener('close', () => {document.body.classList.remove('dialog-open'); returnFocus?.focus();});
+dialog.addEventListener('close', () => {syncDialogScroll(); returnFocus?.focus();});
 form.addEventListener('input', e => {if (typeof e.target.setCustomValidity === 'function') e.target.setCustomValidity('');});
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -72,7 +92,7 @@ const month=new Date().getMonth();setSeason(month>=8&&month<=10?'spring':month==
 // A small grass-cutting playground; no imagery or external game dependencies.
 const canvas=$('#lawn'),ctx=canvas.getContext('2d');
 const COLS=48,ROWS=28,cut=new Uint8Array(COLS*ROWS);
-let width=600,height=335,down=false,lastPoint=null,cutCount=0,guidedRow=0,cursor={x:.12,y:.5},lastAnnounced=0;
+let width=600,height=335,down=false,lastPoint=null,cutCount=0,guidedRow=0,cursor={x:.12,y:.5},lastAnnounced=0,lawnComplete=false;
 function random(n){const x=Math.sin(n*127.1+311.7)*43758.5453;return x-Math.floor(x);}
 function render(){
   const dpr=Math.min(devicePixelRatio||1,2);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,width,height);
@@ -95,6 +115,11 @@ function updateProgress(){
   $('#lawn-status').textContent=`${shown}% FRESHLY CUT`;lastAnnounced=shown;
   $('#lawn-intro').hidden=cutCount>0;$('#lawn-done').hidden=!done;
   $('#guided-mow').disabled=done;
+  if (done && !lawnComplete) {
+    $('#lawn-done').focus({preventScroll:true});
+    $('#lawn-done').scrollIntoView({block:'nearest',behavior:reducedMotion.matches?'auto':'smooth'});
+  }
+  lawnComplete=done;
 }
 function mow(x,y){
   cursor={x:Math.max(0,Math.min(1,x)),y:Math.max(0,Math.min(1,y))};

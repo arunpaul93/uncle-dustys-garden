@@ -13,11 +13,11 @@ Keep this website in the local checkout and the public GitHub repository at http
 ## Features
 
 - Responsive garden palette, handwritten accents, a mascot and clear service cards.
-- Local WebP garden photograph and transparent Uncle Dusty character illustration.
+- Local WebP garden photograph and an interactive Uncle Dusty mascot that tilts/nods on interaction and opens an About us dialog.
 - Four visible service cards with contextual enquiry actions, followed by the process, contact details and practical FAQs.
 - Single-page enquiry with job details, required contact name and phone, optional email, prefilled office-team email draft, and plain-text download.
-- Canvas lawn game with pointer, touch, arrow-key and guided-stripe controls.
-- Mowing game below the business content, plus optional Australian seasonal notes with accessible keyboard-controlled tabs.
+- Canvas lawn game with pointer, touch, arrow-key and guided-stripe controls; a larger completion banner appears above the finished lawn.
+- Mowing game below the business content, plus optional Australian seasonal notes with four distinct icon tabs and keyboard controls.
 - Reduced-motion support, native modal focus management and form validation.
 
 ## Business configuration still needed

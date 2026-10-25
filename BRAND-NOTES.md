@@ -4,6 +4,10 @@
 
 Uncle Dusty may not attend every job. Do not use “a familiar face” or imply that customers will always meet him or receive the same gardener. The hero mascot has no attendance-related caption.
 
+The mascot is now an accessible About us button with a pointer-responsive tilt, a short nod on hover/focus, decorative sparkles and a greeting animation in the dialog. The About us text explicitly identifies Dusty as the brand mascot and does not invent a biography or claim he attends jobs. Motion is disabled for reduced-motion preferences. Modal close controls, Escape and focus restoration are supported, including the transition to the existing enquiry form.
+
+The game completion banner appears above the finished lawn, uses larger type and receives focus when all cells are cut. Reset hides it again. The cream background and paper panels have subtle darker shading/shadows. Spring, Summer, Autumn and Winter use flower, sun, leaf and rain-cloud icon buttons with a clear selected state. The contact card heading is “Contact us”. Existing photos and the four-field email-draft enquiry remain unchanged.
+
 Keep the headline, palette, existing images, mascot and mixed photo arrows. Use practical service wording, neutral business voice and fewer slogans. Do not imply that the illustrated mascot is the person attending jobs or that a separate office team exists. The homepage order is hero, services, process, contact, FAQs, game, then optional seasonal tips. The enquiry still has four fields and prepares an email draft; no backend or photo uploads have been added. Genuine photos, reviews, service-area claims and trust credentials remain deferred until supplied by the user. Host only locally and on GitHub Pages; do not create or publish a ChatGPT Site.
 
 User-selected name: Uncle Dusty’s Garden. Headline: The grass is greener over here.
