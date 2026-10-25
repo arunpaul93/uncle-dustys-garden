@@ -16,6 +16,14 @@
 .lawn-game:before{transform:none!important;right:0;top:auto;bottom:-28px}
 #quote-dialog input,#quote-dialog textarea,#quote-dialog label,#quote-dialog .button{transform:none!important;rotate:none!important}
 
+/* Give the photo notes their own hand-drawn gestures and directions. */
+.photo-caption svg{width:100px;height:80px;right:-64px;top:-69px;stroke-linecap:round;stroke-linejoin:round}
+.photo-scribble svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.scribble-one svg{width:104px;height:96px;left:70px;top:42px;transform:rotate(-6deg)}
+.scribble-two svg{width:118px;height:86px;right:14px;top:54px;transform:none}
+@media(max-width:850px){.scribble-one svg{width:84px;height:78px;left:50px;top:35px}.scribble-two svg{width:88px;height:70px;right:4px;top:48px}}
+@media(max-width:650px){.photo-caption svg{width:72px;height:61px;right:-32px;top:-51px}.scribble-one svg{width:70px;height:65px;left:45px;top:30px}.scribble-two svg{width:67px;height:58px;right:9px;top:45px}}
+
 /* Celebrate below the lawn so every finished stripe remains visible. */
 .lawn-done{position:static;inset:auto;margin-top:16px;padding:18px 22px;display:grid;grid-template-columns:1fr auto;gap:5px 22px;text-align:left}
 .lawn-done>span{display:none}.lawn-done strong{font-size:32px}.lawn-done p{font-size:10px;margin:0}.lawn-done .button{grid-column:2;grid-row:1/3;align-self:center}
