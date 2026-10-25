@@ -2,7 +2,7 @@
 
 User-selected name: Uncle Dusty’s Garden. Headline: The grass is greener over here.
 
-Business phone: 0483 313 425. Enquiry address: admin@uncledustys.com.au. No service area or approved rates supplied.
+Business phone: 0483 313 425. Enquiry address: support@uncledustys.com.au. No service area or approved rates supplied.
 
 The illustrated Uncle Dusty is a brand mascot, not a likeness or biography of a real person. No claims of qualifications, insurance, reviews, service history, or local coverage have been invented.
 

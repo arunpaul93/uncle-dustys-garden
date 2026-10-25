@@ -43,7 +43,7 @@ form.addEventListener('submit', e => {
   const values = {details:details.value.trim(), name:name.value.trim(), phone:phoneText, email:email.value.trim()};
   requestText = `UNCLE DUSTY’S GARDEN — GARDEN ENQUIRY\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nJob details:\n${values.details}\n\nContact name: ${values.name}\nContact number: ${values.phone}\nEmail address: ${values.email || 'Not provided'}\n\nENQUIRY DRAFT — Not sent automatically. Bookings are confirmed by our office team.\n`;
   $('#request-summary').textContent = `${values.details}\n\nContact: ${values.name}\nPhone: ${values.phone}${values.email ? '\nEmail: ' + values.email : ''}`;
-  $('#email-request').href = `mailto:admin@uncledustys.com.au?subject=${encodeURIComponent('Garden enquiry - office team')}&body=${encodeURIComponent(requestText)}`;
+  $('#email-request').href = `mailto:support@uncledustys.com.au?subject=${encodeURIComponent('Garden enquiry - office team')}&body=${encodeURIComponent(requestText)}`;
   form.hidden = true; $('#quote-success').hidden = false; $('#email-request').focus();
 });
 $('#download-request').addEventListener('click', () => {
@@ -53,7 +53,7 @@ $('#download-request').addEventListener('click', () => {
 });
 $('#start-again').addEventListener('click', () => {
   form.reset(); $$('input, textarea', form).forEach(field => field.setCustomValidity(''));
-  requestText = ''; suggestedDetails = ''; $('#request-summary').textContent = ''; $('#email-request').href = 'mailto:admin@uncledustys.com.au';
+  requestText = ''; suggestedDetails = ''; $('#request-summary').textContent = ''; $('#email-request').href = 'mailto:support@uncledustys.com.au';
   form.hidden = false; $('#quote-success').hidden = true; $('#job-details').focus({preventScroll:true}); dialog.scrollTop = 0;
 });
 

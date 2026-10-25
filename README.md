@@ -18,7 +18,7 @@ From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaS
 
 ## Business configuration still needed
 
-Brand and contacts were supplied by the user: Uncle Dusty?s Garden, 0483 313 425, admin@uncledustys.com.au. The service area has not been supplied and is not claimed. Confirm the waste policy. No prices are calculated or displayed in the enquiry form. The job sheet prepares a mailto draft; the visitor must send it from their mail app. Nothing is submitted automatically, persisted, or booked. Downloads are a fallback for devices without a configured mail app. The mascot is an illustrated brand character and the garden photo is illustrative, not a documented client project.
+Brand and contacts were supplied by the user: Uncle Dusty?s Garden, 0483 313 425, support@uncledustys.com.au. The service area has not been supplied and is not claimed. Confirm the waste policy. No prices are calculated or displayed in the enquiry form. The job sheet prepares a mailto draft; the visitor must send it from their mail app. Nothing is submitted automatically, persisted, or booked. Downloads are a fallback for devices without a configured mail app. The mascot is an illustrated brand character and the garden photo is illustrative, not a documented client project.
 
 ## Source
 
