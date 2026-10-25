@@ -61,7 +61,7 @@ form.addEventListener('submit',e=>{
   const sizeLabel={small:'Small — up to 100 m²',medium:'Medium — 100–300 m²',large:'Large — 300–600 m²'}[result.size];
   requestText=`UNCLE DUSTY’S GARDEN — ENQUIRY JOB SHEET\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nName: ${data.get('name').trim()}\nEmail: ${data.get('email').trim()}\nSuburb / postcode: ${data.get('suburb').trim()}\n\nServices: ${services.join(', ')}\nPatch size: ${sizeLabel}\nFrequency: ${frequency}\nIllustrative estimate: ${result.label} AUD per visit\n\nNotes: ${data.get('notes').trim()||'No additional notes.'}\n\nENQUIRY DRAFT — Not sent automatically. No booking has been made.\nPricing is illustrative and needs a final assessment. Access, garden condition, green waste removal and agreed scope may change the price.\n`;
   $('#request-summary').textContent=`${services.join(' + ')}\n${sizeLabel} · ${frequency}\nIllustrative range: ${result.label} AUD / visit\nPrepared for: ${data.get('name').trim()}`;
-  form.hidden=true;$('.quote-steps').hidden=true;$('#quote-success').hidden=false;$('#email-request').href = `mailto:admin@uncledustys.com.au?subject=${encodeURIComponent("Garden enquiry for Uncle Dusty")}&body=${encodeURIComponent(requestText)}`;$('#email-request').focus();
+  form.hidden=true;$('.quote-steps').hidden=true;$('#quote-success').hidden=false;$('#email-request').href = `mailto:admin@uncledustys.com.au?subject=${encodeURIComponent("Garden enquiry - office team")}&body=${encodeURIComponent(requestText)}`;$('#email-request').focus();
 });
 $('#download-request').addEventListener('click',()=>{
   const url=URL.createObjectURL(new Blob([requestText],{type:'text/plain;charset=utf-8'}));

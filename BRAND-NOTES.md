@@ -20,3 +20,7 @@ Use case: illustration-story. Asset type: transparent website brand mascot for U
 
 JavaScript syntax validation passed. Desktop and phone hero reviewed. Job sheet service validation, frequency estimate, contact entry, mailto recipient/body and branded download checked. Seasonal keyboard controls, mowing completion and reset checked. Phone and email destinations verified without placing calls or sending messages. Responsive layouts reviewed at 1440, 768, 390 and 320 pixels with no horizontal overflow. Mobile menu, contact navigation and native dialog layout checked. Seasonal tabs and tablet sign-off spacing corrected after visual review.
 
+
+## Contact voice
+
+Dusty remains the illustrated brand character. Calls, quote requests, email drafts, and booking enquiries are handled by the office team. Contact actions use neutral team wording; no copy promises that Dusty personally answers calls or confirms bookings. The phone number, admin email, chosen headline, and character artwork are unchanged.
