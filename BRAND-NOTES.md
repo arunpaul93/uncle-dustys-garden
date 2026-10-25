@@ -6,7 +6,7 @@ Business phone: 0483 313 425. Enquiry address: admin@uncledustys.com.au. No serv
 
 The illustrated Uncle Dusty is a brand mascot, not a likeness or biography of a real person. No claims of qualifications, insurance, reviews, service history, or local coverage have been invented.
 
-The quote job sheet prepares a mailto draft addressed to the supplied business email. The visitor reviews and sends it in their mail application. No email was sent by the assistant. A download is available for devices without a configured mail application. Current prices are explicitly illustrative and need approval.
+The quote job sheet prepares a mailto draft addressed to the supplied business email. The visitor reviews and sends it in their mail application. No email was sent by the assistant. A download is available for devices without a configured mail application. The enquiry form does not calculate or display prices.
 
 ## Image production
 
@@ -18,9 +18,15 @@ Use case: illustration-story. Asset type: transparent website brand mascot for U
 
 ## Validation
 
-JavaScript syntax validation passed. Desktop and phone hero reviewed. Job sheet service validation, frequency estimate, contact entry, mailto recipient/body and branded download checked. Seasonal keyboard controls, mowing completion and reset checked. Phone and email destinations verified without placing calls or sending messages. Responsive layouts reviewed at 1440, 768, 390 and 320 pixels with no horizontal overflow. Mobile menu, contact navigation and native dialog layout checked. Seasonal tabs and tablet sign-off spacing corrected after visual review.
+JavaScript syntax validation passed. Desktop and phone hero reviewed. Enquiry field validation, contact entry, office-team mailto recipient/body, and branded download checked. Seasonal keyboard controls, mowing completion and reset checked. Phone and email destinations verified without placing calls or sending messages. Responsive layouts reviewed at 1440, 768, 390 and 320 pixels with no horizontal overflow. Mobile menu, contact navigation and native dialog layout checked. Seasonal tabs and tablet sign-off spacing corrected after visual review.
 
 
 ## Contact voice
 
 Dusty remains the illustrated brand character. Calls, quote requests, email drafts, and booking enquiries are handled by the office team. Contact actions use neutral team wording; no copy promises that Dusty personally answers calls or confirms bookings. The phone number, admin email, chosen headline, and character artwork are unchanged.
+
+## Simplified enquiry and level layout
+
+The enquiry now has only four fields: job details, required contact name, required contact number, and optional email. There are no service-selection steps, size/frequency fields, price calculations, or estimates. Contact details and job notes are included in the office-team email draft and download. All tilted text, paper panels and controls are level; handwriting, character art and drawn arrows remain.
+
+Validation of the simplified form: required details/name/phone checked; invalid phone and invalid supplied email blocked; blank email accepted; valid supplied email included; office recipient and phone included in draft; downloaded enquiry contains no estimate; computed transforms on form fields and paper panels are level.

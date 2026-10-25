@@ -9,65 +9,53 @@ menu.addEventListener('click', () => {
 $$('#main-nav a').forEach(a => a.addEventListener('click', () => { menu.setAttribute('aria-expanded', 'false'); $('#main-nav').classList.remove('is-open'); }));
 document.addEventListener('keydown', e => { if(e.key === 'Escape') {menu.setAttribute('aria-expanded','false');$('#main-nav').classList.remove('is-open');} });
 
-// Quote request book: personal information is used only in memory.
+// One-page enquiry: job details and contact information stay in memory.
 const dialog = $('#quote-dialog'), form = $('#quote-form');
 const serviceNames = { mowing:'Lawn mowing & edging', garden:'Hedges & garden care', cleanup:'Weeding & clean-ups', regular:'Regular garden care' };
-let quoteStep = 0, requestText = '', returnFocus;
-function selectedServices() { return $$('input[name=service]:checked', form).map(input => input.value); }
-function estimate() {
-  const size = $('input[name=size]:checked', form).value;
-  const frequency = $('#frequency').value;
-  const base = { mowing:55, garden:80, cleanup:100, regular:110 };
-  const services = selectedServices();
-  const cost = services.reduce((sum,s) => sum + base[s],0) * {small:1,medium:1.6,large:2.4}[size] * (frequency === 'fortnightly' ? .9 : 1);
-  const low = Math.round(cost/5)*5, high = Math.round((cost * 1.4 + 5)/5)*5;
-  const label = `$${low}–$${high}`;
-  $('#estimate-value').textContent = label;
-  return {size, frequency, label};
-}
-function showStep(step) {
-  quoteStep = step;
-  $$('.quote-step').forEach((el,i) => {el.hidden = i !== step;});
-  $$('.quote-steps>span').forEach((el,i) => {el.classList.toggle('active',i===step); if (i === step) el.setAttribute('aria-current','step'); else el.removeAttribute('aria-current');});
-  $('#quote-back').hidden = step === 0; $('#quote-next').hidden = step === 2; $('#quote-submit').hidden = step !== 2;
-  $('#quote-step-count').textContent = `STEP ${step+1} OF 3`;
-  estimate();
-}
+let requestText = '', returnFocus, suggestedDetails = '';
 function openQuote(service) {
   returnFocus = document.activeElement;
-  form.hidden=false; $('.quote-steps').hidden=false; $('#quote-success').hidden=true; $('#service-error').hidden=true;
-  if (service && serviceNames[service]) {
-    $$('input[name=service]',form).forEach(i=>{i.checked = i.value===service;});
-    if(service==='regular') $('#frequency').value='fortnightly';
+  form.hidden = false; $('#quote-success').hidden = true;
+  const details = $('#job-details');
+  if (serviceNames[service] && (!details.value.trim() || details.value === suggestedDetails)) {
+    suggestedDetails = serviceNames[service] + ': '; details.value = suggestedDetails;
   }
-  showStep(0); dialog.showModal(); document.body.classList.add('dialog-open');
+  dialog.showModal(); document.body.classList.add('dialog-open'); details.focus({preventScroll:true}); dialog.scrollTop = 0;
 }
-$$('[data-quote]').forEach(button=>button.addEventListener('click',()=>openQuote(button.dataset.quote)));
-$('.dialog-close').addEventListener('click',()=>dialog.close());
-dialog.addEventListener('click',e=>{if(e.target===dialog){const rect=dialog.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)dialog.close();}});
-dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');returnFocus?.focus();});
-$('#quote-next').addEventListener('click',()=>{
-  if(quoteStep===0&&!selectedServices().length){$('#service-error').hidden=false;return;}
-  $('#service-error').hidden=true;showStep(Math.min(2,quoteStep+1));
-  if(quoteStep===2)$('input[name=name]',form).focus();
+$$('[data-quote]').forEach(button => button.addEventListener('click', () => openQuote(button.dataset.quote)));
+$('.dialog-close').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', e => {
+  if (e.target !== dialog) return;
+  const rect = dialog.getBoundingClientRect();
+  if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) dialog.close();
 });
-$('#quote-back').addEventListener('click',()=>showStep(Math.max(0,quoteStep-1)));
-form.addEventListener('change',()=>{estimate();if(selectedServices().length)$('#service-error').hidden=true;});
-form.addEventListener('submit',e=>{
-  e.preventDefault();if(quoteStep!==2){$('#quote-next').click();return;}if(!form.reportValidity())return;
-  const data=new FormData(form), result=estimate();
-  const services=selectedServices().map(s=>serviceNames[s]);
-  const frequency={once:'One-off visit',fortnightly:'Every fortnight',monthly:'Once a month'}[result.frequency];
-  const sizeLabel={small:'Small — up to 100 m²',medium:'Medium — 100–300 m²',large:'Large — 300–600 m²'}[result.size];
-  requestText=`UNCLE DUSTY’S GARDEN — ENQUIRY JOB SHEET\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nName: ${data.get('name').trim()}\nEmail: ${data.get('email').trim()}\nSuburb / postcode: ${data.get('suburb').trim()}\n\nServices: ${services.join(', ')}\nPatch size: ${sizeLabel}\nFrequency: ${frequency}\nIllustrative estimate: ${result.label} AUD per visit\n\nNotes: ${data.get('notes').trim()||'No additional notes.'}\n\nENQUIRY DRAFT — Not sent automatically. No booking has been made.\nPricing is illustrative and needs a final assessment. Access, garden condition, green waste removal and agreed scope may change the price.\n`;
-  $('#request-summary').textContent=`${services.join(' + ')}\n${sizeLabel} · ${frequency}\nIllustrative range: ${result.label} AUD / visit\nPrepared for: ${data.get('name').trim()}`;
-  form.hidden=true;$('.quote-steps').hidden=true;$('#quote-success').hidden=false;$('#email-request').href = `mailto:admin@uncledustys.com.au?subject=${encodeURIComponent("Garden enquiry - office team")}&body=${encodeURIComponent(requestText)}`;$('#email-request').focus();
+dialog.addEventListener('close', () => {document.body.classList.remove('dialog-open'); returnFocus?.focus();});
+form.addEventListener('input', e => {if (typeof e.target.setCustomValidity === 'function') e.target.setCustomValidity('');});
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const details = $('#job-details'), name = $('#contact-name'), phone = $('#contact-phone'), email = $('#contact-email');
+  details.setCustomValidity(details.value.trim() ? '' : 'Please tell us what needs doing.');
+  name.setCustomValidity(name.value.trim() ? '' : 'Please enter your contact name.');
+  const phoneText = phone.value.trim();
+  const validPhone = /^[+\d\s().-]+$/.test(phoneText) && phoneText.replace(/\D/g, '').length >= 7;
+  phone.setCustomValidity(validPhone ? '' : 'Please enter a phone number with at least 7 digits.');
+  if (!form.reportValidity()) return;
+  const values = {details:details.value.trim(), name:name.value.trim(), phone:phoneText, email:email.value.trim()};
+  requestText = `UNCLE DUSTY’S GARDEN — GARDEN ENQUIRY\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nJob details:\n${values.details}\n\nContact name: ${values.name}\nContact number: ${values.phone}\nEmail address: ${values.email || 'Not provided'}\n\nENQUIRY DRAFT — Not sent automatically. Bookings are confirmed by our office team.\n`;
+  $('#request-summary').textContent = `${values.details}\n\nContact: ${values.name}\nPhone: ${values.phone}${values.email ? '\nEmail: ' + values.email : ''}`;
+  $('#email-request').href = `mailto:admin@uncledustys.com.au?subject=${encodeURIComponent('Garden enquiry - office team')}&body=${encodeURIComponent(requestText)}`;
+  form.hidden = true; $('#quote-success').hidden = false; $('#email-request').focus();
 });
-$('#download-request').addEventListener('click',()=>{
-  const url=URL.createObjectURL(new Blob([requestText],{type:'text/plain;charset=utf-8'}));
-  const a=document.createElement('a');a.href=url;a.download='uncle-dustys-garden-job-sheet.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+$('#download-request').addEventListener('click', () => {
+  const url = URL.createObjectURL(new Blob([requestText], {type:'text/plain;charset=utf-8'}));
+  const a = document.createElement('a'); a.href = url; a.download = 'uncle-dustys-garden-enquiry.txt';
+  document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 5000);
 });
-$('#start-again').addEventListener('click',()=>{form.reset();requestText='';form.hidden=false;$('.quote-steps').hidden=false;$('#quote-success').hidden=true;showStep(0);$('input[name=service]',form).focus();});
+$('#start-again').addEventListener('click', () => {
+  form.reset(); $$('input, textarea', form).forEach(field => field.setCustomValidity(''));
+  requestText = ''; suggestedDetails = ''; $('#request-summary').textContent = ''; $('#email-request').href = 'mailto:admin@uncledustys.com.au';
+  form.hidden = false; $('#quote-success').hidden = true; $('#job-details').focus({preventScroll:true}); dialog.scrollTop = 0;
+});
 
 // Seasonal notes, ordered around Australian seasons.
 const notes={
