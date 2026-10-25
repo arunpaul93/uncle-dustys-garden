@@ -6,6 +6,10 @@ A custom, buildless garden maintenance website personalised for Uncle Dusty. See
 
 From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaScript syntax check: `node --check dist/app.js`. No dependencies or build step required. Deploy the `dist` directory as a static website.
 
+## Hosting
+
+Keep this website in the local checkout and the public GitHub repository at https://github.com/arunpaul93/uncle-dustys-garden. GitHub Pages hosts the website at uncledustys.com.au. The workflow in `.github/workflows/pages.yml` publishes `dist/` when website files change on `main`, and can also be run manually. Do not create or publish a ChatGPT Site for this project.
+
 ## Features
 
 - Responsive garden-shed noticeboard layout, handwritten annotations, and custom SVG brand illustrations.
@@ -22,4 +26,4 @@ Brand and contacts were supplied by the user: Uncle Dusty?s Garden, 0483 313 425
 
 ## Source
 
-`dist/index.html`: content and semantics. `dist/style.css`: original noticeboard system. `dist/dusty.css`: Uncle Dusty branding and responsive personalisation. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.openai/hosting.json`: Sites identity and static deployment configuration.
+`dist/index.html`: content and semantics. `dist/style.css`: original noticeboard system. `dist/dusty.css`: Uncle Dusty branding and responsive personalisation. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.github/workflows/pages.yml`: GitHub Pages deployment configuration.
