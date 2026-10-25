@@ -4,7 +4,7 @@
 
 Uncle Dusty may not attend every job. Do not use “a familiar face” or imply that customers will always meet him or receive the same gardener. The hero mascot has no attendance-related caption.
 
-The mascot is now an accessible About us button with a pointer-responsive tilt, a short nod on hover/focus, decorative sparkles and a greeting animation in the dialog. The About us text explicitly identifies Dusty as the brand mascot and does not invent a biography or claim he attends jobs. Motion is disabled for reduced-motion preferences. Modal close controls, Escape and focus restoration are supported, including the transition to the existing enquiry form.
+The mascot is an accessible About us button. Activating it plays a 1.05-second open-palm wrist wave while the body stays still, then opens the About us dialog. Hover/focus no longer tilts the character, and the dialog image does not nod. Reduced-motion visitors open the dialog immediately. Repeated taps are ignored during the wave; Escape or opening the enquiry form cancels a pending wave. Modal close controls and focus restoration remain supported. The About us copy describes the business without an explicit disclaimer about who attends jobs, as requested by the user; do not invent a biography or imply personal attendance.
 
 The game completion banner appears above the finished lawn, uses larger type and receives focus when all cells are cut. Reset hides it again. The cream background and paper panels have subtle darker shading/shadows. Spring, Summer, Autumn and Winter use flower, sun, leaf and rain-cloud icon buttons with a clear selected state. The contact card heading is “Contact us”. Existing photos and the four-field email-draft enquiry remain unchanged.
 
@@ -19,6 +19,12 @@ The illustrated Uncle Dusty is a brand mascot, not a likeness or biography of a 
 The quote job sheet prepares a mailto draft addressed to the supplied business email. The visitor reviews and sends it in their mail application. No email was sent by the assistant. A download is available for devices without a configured mail application. The enquiry form does not calculate or display prices.
 
 ## Image production
+
+### Hand-wave artwork
+
+Built-in `image_gen` edit of `dist/assets/uncle-dusty.webp`, saved as `dist/assets/uncle-dusty-wave.webp` (1254 × 1254, alpha transparency). WebP conversion changes only the file format. CSS clips the generated image into a stationary body layer and a hand layer pivoting at the wrist; the original artwork remains available for the dialog.
+
+Generation prompt: Use case: precise-object-edit. Asset type: transparent website mascot animation source. Edit target: the supplied Uncle Dusty illustration. Make exactly one change: replace the raised thumbs-up hand on the RIGHT side of the image with a relaxed friendly OPEN PALM greeting, all five fingers visible, palm facing the viewer, ready to wave at the wrist. Preserve the same face, hat, hair, expression, shirt, apron, trowel, lower hand, pose, framing, palette and hand-inked print texture. Keep the raised forearm in its current position; only the hand changes. Hand should be entirely to the right of the head, with a little clear space between the open hand and hat. Keep the complete open hand inside the canvas. Preserve the original square composition and transparent background. One single character, not a sprite sheet. No text, no motion marks, no extra accessories. Actual alpha transparency.
 
 Built-in image-generation tool. Final project asset: `dist/assets/uncle-dusty.webp` (1254 × 1254 RGBA, transparent). Original PNG retained at the tool’s generated-images location; WebP is a format-only optimisation preserving transparency. Garden photograph retained from the original design.
 
