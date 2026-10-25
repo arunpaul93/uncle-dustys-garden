@@ -1,5 +1,9 @@
 # Uncle Dusty’s Garden — brand notes
 
+## Current content direction
+
+Keep the headline, palette, existing images, mascot and mixed photo arrows. Use practical service wording, neutral business voice and fewer slogans. Do not imply that the illustrated mascot is the person attending jobs or that a separate office team exists. The homepage order is hero, services, process, contact, FAQs, game, then optional seasonal tips. The enquiry still has four fields and prepares an email draft; no backend or photo uploads have been added. Genuine photos, reviews, service-area claims and trust credentials remain deferred until supplied by the user. Host only locally and on GitHub Pages; do not create or publish a ChatGPT Site.
+
 User-selected name: Uncle Dusty’s Garden. Headline: The grass is greener over here.
 
 Business phone: 0483 313 425. Enquiry address: support@uncledustys.com.au. No service area or approved rates supplied.

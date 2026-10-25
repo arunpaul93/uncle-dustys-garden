@@ -12,12 +12,12 @@ Keep this website in the local checkout and the public GitHub repository at http
 
 ## Features
 
-- Responsive garden-shed noticeboard layout, handwritten annotations, and custom SVG brand illustrations.
+- Responsive garden palette, handwritten accents, a mascot and clear service cards.
 - Local WebP garden photograph and transparent Uncle Dusty character illustration.
-- Service disclosures with contextual quote selection.
+- Four visible service cards with contextual enquiry actions, followed by the process, contact details and practical FAQs.
 - Single-page enquiry with job details, required contact name and phone, optional email, prefilled office-team email draft, and plain-text download.
 - Canvas lawn game with pointer, touch, arrow-key and guided-stripe controls.
-- Australian seasonal notes with accessible keyboard-controlled tabs.
+- Mowing game below the business content, plus optional Australian seasonal notes with accessible keyboard-controlled tabs.
 - Reduced-motion support, native modal focus management and form validation.
 
 ## Business configuration still needed
@@ -26,4 +26,4 @@ Brand and contacts were supplied by the user: Uncle Dusty?s Garden, 0483 313 425
 
 ## Source
 
-`dist/index.html`: content and semantics. `dist/style.css`: original noticeboard system. `dist/dusty.css`: Uncle Dusty branding and responsive personalisation. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.github/workflows/pages.yml`: GitHub Pages deployment configuration.
+`dist/index.html`: content and semantics. `dist/style.css`: original noticeboard system. `dist/dusty.css`: Uncle Dusty branding and responsive personalisation. `dist/practical.css`: clearer service cards, restrained headings and business-first layout. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.github/workflows/pages.yml`: GitHub Pages deployment configuration.

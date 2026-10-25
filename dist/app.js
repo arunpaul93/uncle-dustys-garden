@@ -41,9 +41,9 @@ form.addEventListener('submit', e => {
   phone.setCustomValidity(validPhone ? '' : 'Please enter a phone number with at least 7 digits.');
   if (!form.reportValidity()) return;
   const values = {details:details.value.trim(), name:name.value.trim(), phone:phoneText, email:email.value.trim()};
-  requestText = `UNCLE DUSTY’S GARDEN — GARDEN ENQUIRY\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nJob details:\n${values.details}\n\nContact name: ${values.name}\nContact number: ${values.phone}\nEmail address: ${values.email || 'Not provided'}\n\nENQUIRY DRAFT — Not sent automatically. Bookings are confirmed by our office team.\n`;
+  requestText = `UNCLE DUSTY’S GARDEN — GARDEN ENQUIRY\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nJob details:\n${values.details}\n\nContact name: ${values.name}\nContact number: ${values.phone}\nEmail address: ${values.email || 'Not provided'}\n\nENQUIRY DRAFT — Not sent automatically. A booking is confirmed separately.\n`;
   $('#request-summary').textContent = `${values.details}\n\nContact: ${values.name}\nPhone: ${values.phone}${values.email ? '\nEmail: ' + values.email : ''}`;
-  $('#email-request').href = `mailto:support@uncledustys.com.au?subject=${encodeURIComponent('Garden enquiry - office team')}&body=${encodeURIComponent(requestText)}`;
+  $('#email-request').href = `mailto:support@uncledustys.com.au?subject=${encodeURIComponent('Garden enquiry')}&body=${encodeURIComponent(requestText)}`;
   form.hidden = true; $('#quote-success').hidden = false; $('#email-request').focus();
 });
 $('#download-request').addEventListener('click', () => {
