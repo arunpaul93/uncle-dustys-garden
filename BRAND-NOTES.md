@@ -2,6 +2,8 @@
 
 ## Current content direction
 
+Mascot cache regression: its structural layer geometry is intentionally in `dist/index.html`, alongside the matching layer markup. The body, forearm and hand must all be absolutely positioned and clipped in one frame, including when an older `practical.css` is cached. Deployment fingerprints the entry CSS and JavaScript references using `scripts/version-assets.mjs`. Verified with the prior wrist-only stylesheet deliberately loaded: no duplicate figures; current styles still animate the elbow and wrist before About us opens.
+
 Uncle Dusty may not attend every job. Do not use “a familiar face” or imply that customers will always meet him or receive the same gardener. The hero mascot has no attendance-related caption.
 
 The mascot is an accessible About us button. Activating it plays a 1.05-second coordinated elbow-and-wrist wave while the torso stays still, then opens the About us dialog. Hover/focus no longer tilts the character, and the dialog image does not nod. Reduced-motion visitors open the dialog immediately. Repeated taps are ignored during the wave; Escape or opening the enquiry form cancels a pending wave. Modal close controls and focus restoration remain supported. The About us copy describes the business without an explicit disclaimer about who attends jobs, as requested by the user; do not invent a biography or imply personal attendance.

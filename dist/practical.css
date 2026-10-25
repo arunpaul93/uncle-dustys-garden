@@ -36,11 +36,7 @@ body{background-image:radial-gradient(ellipse at 4% 15%,#4b41281a,transparent 46
 .dusty-hello{height:210px;margin-bottom:16px}
 .dusty-button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;height:100%;padding:0 0 8px;border:0;background:transparent;isolation:isolate}
 .dusty-figure{position:relative;display:block;width:160px;max-width:100%;aspect-ratio:1;flex-shrink:0;filter:drop-shadow(3px 6px 2px #24463518)}
-.dusty-figure img{position:absolute;inset:0;width:100%;height:100%;margin:0;object-fit:contain;transform:none!important;filter:none}
-.dusty-body{clip-path:polygon(0 0,74% 0,74% 47%,79% 47%,79% 67%,82% 69.5%,100% 69.5%,100% 100%,0 100%)}
-.dusty-arm{position:absolute;inset:0;transform-origin:87% 69.5%}
-.dusty-forearm{clip-path:polygon(79% 47%,100% 47%,100% 70.5%,82% 70.5%,79% 67%)}
-.dusty-hand{clip-path:polygon(74% 0,100% 0,100% 48%,74% 48%);transform-origin:86% 47.4%}
+/* Positioning and clip paths live in index.html with the matching layer markup. */
 .dusty-button.is-waving .dusty-arm{animation:dusty-elbow-wave 1.05s ease-in-out both}
 .dusty-button.is-waving .dusty-hand{animation:dusty-hand-wave 1.05s ease-in-out both}
 .dusty-invite{display:flex;align-items:center;gap:12px;margin-top:-2px;padding:7px 15px;border:1px solid #b8b69c;background:#fcf3dc;font:600 22px/1 var(--hand);box-shadow:2px 3px 0 #24463517;z-index:1}

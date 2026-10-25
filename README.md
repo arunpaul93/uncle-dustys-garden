@@ -10,6 +10,8 @@ From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaS
 
 Keep this website in the local checkout and the public GitHub repository at https://github.com/arunpaul93/uncle-dustys-garden. The default branch is `master`. GitHub Pages hosts the website at uncledustys.com.au. The workflow in `.github/workflows/pages.yml` publishes `dist/` when website files change on `master`, and can also be run manually. Do not create or publish a ChatGPT Site for this project.
 
+The deployment runs `node scripts/version-assets.mjs` to fingerprint the CSS and JavaScript URLs, preventing browsers from pairing new markup with older cached styles. Run the same command after local asset edits to update the references in `dist/index.html`. The mascot's essential layer positioning and clip paths stay in the HTML with their matching markup.
+
 ## Features
 
 - Responsive garden palette, handwritten accents, a mascot and clear service cards.
