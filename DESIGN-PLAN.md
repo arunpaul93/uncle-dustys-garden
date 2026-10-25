@@ -1,4 +1,8 @@
-# Mow Bros ? revised design plan
+# Uncle Dusty personalisation
+
+The approved headline remains ?The grass is greener over here.? Retain the paper labels, ink arrows and warm noticeboard composition. Make the brand personable through a painted wordmark, original gardener character, ochre/terracotta/forest colours, first-person service notes, Dusty?s Mow-O-Meter, Notes from Dusty?s Shed, signatures, and a real phone/email contact card. No invented biography, qualifications, testimonials, hours, or service region. See BRAND-NOTES.md for the mascot brief and QA record.
+
+# Uncle Dusty?s Garden ? design plan
 
 ## User direction
 The user selected the slanted paper caption and curved pen arrow as the strongest visual reference and requested a broader change to the fonts and layout. Make annotations part of the visual language throughout the page.
@@ -20,7 +24,7 @@ Replace the rounded editorial sans / italic serif pairing with condensed workwea
 Keep headlines within the viewport; change the composition intentionally on phones. Annotations must not cover controls or meaningful content. Maintain visible focus, native dialog behavior, accessible form labels and keyboard tabs, reduced-motion support, and keyboard/guided alternatives for the canvas.
 
 ## Scope and honest content
-No business facts, prices, reviews, certifications, or contact details have been supplied. Quote ranges remain illustrative and the download remains local. Preserve the existing Site identity and owner-private audience. No new imagery required.
+The user supplied the Uncle Dusty?s Garden brand, 0483 313 425, and admin@uncledustys.com.au. Service area and real rates are not supplied. Ranges remain illustrative. The job sheet prepares an email draft for the visitor to send and retains a downloadable copy. Preserve the existing Site identity and owner-private audience. No new imagery required.
 
 ## Validation
 Review desktop, tablet and mobile screenshots. Check overflow at 1440, 768, 390 and 320 pixels. Exercise service expansion and preselected quote handoff, quote completion, seasonal keyboard navigation, and mowing progress/reset. Re-run JavaScript syntax validation. Publish the exact verified source through Sites.

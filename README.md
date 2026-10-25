@@ -1,6 +1,6 @@
-# Mow Bros
+# Uncle Dusty's Garden
 
-A custom, buildless lawn and garden care website. See DESIGN-PLAN.md for the creative direction, visitor journey, interaction specifications, and image-generation prompt.
+A custom, buildless garden maintenance website personalised for Uncle Dusty. See DESIGN-PLAN.md for the creative direction, visitor journey, interaction specifications, and image-generation prompt.
 
 ## Run
 
@@ -9,17 +9,17 @@ From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaS
 ## Features
 
 - Responsive garden-shed noticeboard layout, handwritten annotations, and custom SVG brand illustrations.
-- Local WebP garden photograph generated specifically for the design.
+- Local WebP garden photograph and transparent Uncle Dusty character illustration.
 - Service disclosures with contextual quote selection.
-- Three-step quote request builder, illustrative AUD estimate and plain-text download.
+- Three-step job sheet with illustrative AUD guide, prefilled email draft to admin@uncledustys.com.au, and branded plain-text download.
 - Canvas lawn game with pointer, touch, arrow-key and guided-stripe controls.
 - Australian seasonal notes with accessible keyboard-controlled tabs.
 - Reduced-motion support, native modal focus management and form validation.
 
 ## Business configuration still needed
 
-The business name is inferred from the workspace. Replace demo rates in `dist/app.js` with approved pricing. Confirm the actual services, service area, contact details, waste policy, and business credentials. The quote builder is a browser-local demonstration: no details are transmitted, persisted, or booked. Connect a real enquiry service before presenting it as an online booking system. The garden photograph illustrates the brand and is not a client portfolio photo.
+Brand and contacts were supplied by the user: Uncle Dusty?s Garden, 0483 313 425, admin@uncledustys.com.au. The service area has not been supplied and is not claimed. Replace illustrative rates in `dist/app.js` with approved pricing and confirm the waste policy. The job sheet prepares a mailto draft; the visitor must send it from their mail app. Nothing is submitted automatically, persisted, or booked. Downloads are a fallback for devices without a configured mail app. The mascot is an illustrated brand character and the garden photo is illustrative, not a documented client project.
 
 ## Source
 
-`dist/index.html`: content and semantics. `dist/style.css`: visual system and responsive layouts. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.openai/hosting.json`: Sites identity and static deployment configuration.
+`dist/index.html`: content and semantics. `dist/style.css`: original noticeboard system. `dist/dusty.css`: Uncle Dusty branding and responsive personalisation. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.openai/hosting.json`: Sites identity and static deployment configuration.

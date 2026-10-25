@@ -11,7 +11,7 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') {menu.setAttr
 
 // Quote request book: personal information is used only in memory.
 const dialog = $('#quote-dialog'), form = $('#quote-form');
-const serviceNames = { mowing:'Lawn mowing & edging', garden:'Hedges & garden care', cleanup:'Weeding & clean-ups', regular:'Regular garden love' };
+const serviceNames = { mowing:'Lawn mowing & edging', garden:'Hedges & garden care', cleanup:'Weeding & clean-ups', regular:'Regular garden care' };
 let quoteStep = 0, requestText = '', returnFocus;
 function selectedServices() { return $$('input[name=service]:checked', form).map(input => input.value); }
 function estimate() {
@@ -59,13 +59,13 @@ form.addEventListener('submit',e=>{
   const services=selectedServices().map(s=>serviceNames[s]);
   const frequency={once:'One-off visit',fortnightly:'Every fortnight',monthly:'Once a month'}[result.frequency];
   const sizeLabel={small:'Small — up to 100 m²',medium:'Medium — 100–300 m²',large:'Large — 300–600 m²'}[result.size];
-  requestText=`MOW BROS — GARDEN CARE REQUEST\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nName: ${data.get('name').trim()}\nEmail: ${data.get('email').trim()}\nSuburb / postcode: ${data.get('suburb').trim()}\n\nServices: ${services.join(', ')}\nPatch size: ${sizeLabel}\nFrequency: ${frequency}\nIllustrative estimate: ${result.label} AUD per visit\n\nNotes: ${data.get('notes').trim()||'No additional notes.'}\n\nDEMO REQUEST — Not submitted. No booking has been made.\nPricing is illustrative and needs a final assessment. Access, garden condition, green waste removal and agreed scope may change the price.\n`;
+  requestText=`UNCLE DUSTY’S GARDEN — ENQUIRY JOB SHEET\nCreated: ${new Date().toLocaleDateString('en-AU')}\n\nName: ${data.get('name').trim()}\nEmail: ${data.get('email').trim()}\nSuburb / postcode: ${data.get('suburb').trim()}\n\nServices: ${services.join(', ')}\nPatch size: ${sizeLabel}\nFrequency: ${frequency}\nIllustrative estimate: ${result.label} AUD per visit\n\nNotes: ${data.get('notes').trim()||'No additional notes.'}\n\nENQUIRY DRAFT — Not sent automatically. No booking has been made.\nPricing is illustrative and needs a final assessment. Access, garden condition, green waste removal and agreed scope may change the price.\n`;
   $('#request-summary').textContent=`${services.join(' + ')}\n${sizeLabel} · ${frequency}\nIllustrative range: ${result.label} AUD / visit\nPrepared for: ${data.get('name').trim()}`;
-  form.hidden=true;$('.quote-steps').hidden=true;$('#quote-success').hidden=false;$('#download-request').focus();
+  form.hidden=true;$('.quote-steps').hidden=true;$('#quote-success').hidden=false;$('#email-request').href = `mailto:admin@uncledustys.com.au?subject=${encodeURIComponent("Garden enquiry for Uncle Dusty")}&body=${encodeURIComponent(requestText)}`;$('#email-request').focus();
 });
 $('#download-request').addEventListener('click',()=>{
   const url=URL.createObjectURL(new Blob([requestText],{type:'text/plain;charset=utf-8'}));
-  const a=document.createElement('a');a.href=url;a.download='mow-bros-garden-request.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+  const a=document.createElement('a');a.href=url;a.download='uncle-dustys-garden-job-sheet.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
 });
 $('#start-again').addEventListener('click',()=>{form.reset();requestText='';form.hidden=false;$('.quote-steps').hidden=false;$('#quote-success').hidden=true;showStep(0);$('input[name=service]',form).focus();});
 
