@@ -8,7 +8,7 @@ From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaS
 
 ## Hosting
 
-Keep this website in the local checkout and the public GitHub repository at https://github.com/arunpaul93/uncle-dustys-garden. GitHub Pages hosts the website at uncledustys.com.au. The workflow in `.github/workflows/pages.yml` publishes `dist/` when website files change on `main`, and can also be run manually. Do not create or publish a ChatGPT Site for this project.
+Keep this website in the local checkout and the public GitHub repository at https://github.com/arunpaul93/uncle-dustys-garden. The default branch is `master`. GitHub Pages hosts the website at uncledustys.com.au. The workflow in `.github/workflows/pages.yml` publishes `dist/` when website files change on `master`, and can also be run manually. Do not create or publish a ChatGPT Site for this project.
 
 ## Features
 
