@@ -82,7 +82,7 @@ function render(){
     ctx.fillStyle=short?(stripe?'#7eaa45':'#8eb84e'):(stripe?'#54792e':'#638b34');ctx.fillRect(col*cw,row*ch,cw+.5,ch+.5);
     for(let k=0;k<(short?3:6);k++){const seed=i*7+k,x=(col+random(seed))*cw,y=(row+random(seed+7100))*ch;ctx.strokeStyle=short?(k%2?'#a2c466':'#70973a'):(k%2?'#8eaf4b':'#3f6329');ctx.lineWidth=short?.8:1;ctx.beginPath();ctx.moveTo(x,y+ch*.5);ctx.quadraticCurveTo(x-2,y,x+(random(seed+60)-.5)*7,y-(short?2:7+random(seed+20)*9));ctx.stroke();}
   }
-  if(cutCount>0&&cutCount<COLS*ROWS*.92){
+  if(cutCount>0&&cutCount<cut.length){
     const x=cursor.x*width,y=cursor.y*height;ctx.save();ctx.translate(x,y);ctx.shadowColor='#14331c50';ctx.shadowBlur=7;ctx.shadowOffsetY=4;
     ctx.fillStyle='#253a27';ctx.fillRect(-19,-12,38,24);ctx.fillStyle='#d8f36a';ctx.fillRect(-15,-14,30,25);ctx.fillStyle='#173e2b';ctx.fillRect(-9,-9,18,14);ctx.fillStyle='#c66e45';for(const ox of [-21,15])for(const oy of [-13,7])ctx.fillRect(ox,oy,7,10);ctx.shadowBlur=0;ctx.strokeStyle='#f5f3e8';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-11,-13);ctx.lineTo(-11,-31);ctx.lineTo(11,-31);ctx.lineTo(11,-13);ctx.stroke();ctx.restore();
   }
@@ -90,8 +90,8 @@ function render(){
 function resize(){const rect=canvas.getBoundingClientRect();width=rect.width;height=rect.height;const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);render();}
 new ResizeObserver(resize).observe(canvas);
 function updateProgress(){
-  const percent=Math.min(100,Math.round(cutCount/(COLS*ROWS)*100));const done=percent>=92;
-  const shown=done?100:percent;$('#lawn-progress').style.width=`${shown}%`;$('.progress-track').setAttribute('aria-valuenow',shown);
+  const done=cutCount===cut.length;
+  const shown=done?100:Math.floor(cutCount/cut.length*100);$('#lawn-progress').style.width=`${shown}%`;$('.progress-track').setAttribute('aria-valuenow',shown);
   $('#lawn-status').textContent=`${shown}% FRESHLY CUT`;lastAnnounced=shown;
   $('#lawn-intro').hidden=cutCount>0;$('#lawn-done').hidden=!done;
   $('#guided-mow').disabled=done;

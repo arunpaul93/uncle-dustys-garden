@@ -30,3 +30,9 @@ Dusty remains the illustrated brand character. Calls, quote requests, email draf
 The enquiry now has only four fields: job details, required contact name, required contact number, and optional email. There are no service-selection steps, size/frequency fields, price calculations, or estimates. Contact details and job notes are included in the office-team email draft and download. All tilted text, paper panels and controls are level; handwriting, character art and drawn arrows remain.
 
 Validation of the simplified form: required details/name/phone checked; invalid phone and invalid supplied email blocked; blank email accepted; valid supplied email included; office recipient and phone included in draft; downloaded enquiry contains no estimate; computed transforms on form fields and paper panels are level.
+
+## Mow-o-meter completion
+
+Completion requires every lawn cell to be cut. Incomplete percentages round down, and the mower stays visible until the final patch is cut. The success panel sits below the lawn so the finished stripes remain visible.
+
+Regression verified in the browser: seven guided stripes show 96%, keep mowing enabled, and hide the celebration; the eighth stripe shows 100%, disables guided mowing, and reveals the success panel below the fully cut lawn. Reset returns to 0% and hides the panel. Completed desktop and 390-pixel mobile layouts reviewed; mobile has no horizontal overflow. JavaScript syntax check passed.

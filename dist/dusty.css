@@ -15,3 +15,8 @@
 .lawn-intro{transform:translateY(-50%)!important}
 .lawn-game:before{transform:none!important;right:0;top:auto;bottom:-28px}
 #quote-dialog input,#quote-dialog textarea,#quote-dialog label,#quote-dialog .button{transform:none!important;rotate:none!important}
+
+/* Celebrate below the lawn so every finished stripe remains visible. */
+.lawn-done{position:static;inset:auto;margin-top:16px;padding:18px 22px;display:grid;grid-template-columns:1fr auto;gap:5px 22px;text-align:left}
+.lawn-done>span{display:none}.lawn-done strong{font-size:32px}.lawn-done p{font-size:10px;margin:0}.lawn-done .button{grid-column:2;grid-row:1/3;align-self:center}
+@media(max-width:650px){.lawn-done{padding:16px;grid-template-columns:1fr;gap:9px}.lawn-done strong{font-size:29px}.lawn-done .button{grid-column:1;grid-row:auto;justify-self:start;margin-top:4px}}
