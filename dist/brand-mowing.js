@@ -13,6 +13,7 @@ if (stage) {
   let sequence = 0;
   let cycles = 0;
   const GROW_MS = 1400, MOW_MS = 3900, HOLD_MS = 2400;
+  const WALK_FRAME_MS = 180;
 
   const framePosition = frame => `${frame * 100 / 3}%`;
   const canPlay = () => ready && !paused && !motion.matches && !document.hidden;
@@ -42,7 +43,7 @@ if (stage) {
     stage.style.setProperty('--mower-x', '0px');
     stage.style.setProperty('--mower-opacity', '1');
     stage.style.setProperty('--mower-bob', '0px');
-    setPose(1, 2);
+    setPose(0, 2);
     stage.dataset.state = motion.matches ? 'reduced-motion' : paused ? 'paused' : 'ready';
     stage.dataset.progress = '1';
     stage.dataset.growth = '0';
@@ -81,7 +82,7 @@ if (stage) {
         stage.dataset.state = 'growing';
         stage.dataset.growth = growth.toFixed(3);
         stage.dataset.progress = '0';
-        setPose(1, growth > .72 ? 0 : 2);
+        setPose(0, growth > .72 ? 0 : 2);
         animationFrame = requestAnimationFrame(tick);
         return;
       }
@@ -97,14 +98,14 @@ if (stage) {
       const returning = Math.max(0, Math.min(1, (elapsed - 3400) / 500));
       const x = returning > 0 ? 0 : startX + (endX - startX) * progress + leaving * mowerWidth * .12;
       const opacity = returning > 0 ? returning : 1 - leaving;
-      const cutting = elapsed >= 180 && elapsed < 2980;
+      const walking = elapsed >= 180 && elapsed < 3400;
       const head = progress < .18 ? 0 : progress < .34 ? 1 : progress < .7 ? 2 : progress < .9 ? 3 : 0;
       stage.style.setProperty('--mow-reveal', `${progress * 100}%`);
       stage.style.setProperty('--mower-x', `${x}px`);
       stage.style.setProperty('--mower-opacity', opacity);
-      stage.style.setProperty('--mower-bob', cutting ? `${Math.sin(elapsed / 75) * .65}px` : '0px');
+      stage.style.setProperty('--mower-bob', walking ? `${Math.sin(elapsed / 90) * .65}px` : '0px');
       stage.dataset.progress = progress.toFixed(3);
-      setPose(cutting ? Math.floor((elapsed - 180) / 145) % 4 : 1, returning > 0 ? 2 : head);
+      setPose(walking ? Math.floor((elapsed - 180) / WALK_FRAME_MS) % 4 : 0, returning > 0 ? 2 : head);
       if (elapsed >= MOW_MS) { finish(); schedule(); return; }
       animationFrame = requestAnimationFrame(tick);
     }
