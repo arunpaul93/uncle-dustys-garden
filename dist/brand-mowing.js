@@ -35,7 +35,7 @@ if (stage) {
     clearTimeout(restartTimer);
     restartTimer = 0;
     running = false;
-    brand.classList.remove('is-growing', 'is-mowing', 'is-cutting');
+    brand.classList.remove('is-growing', 'is-mowing');
     stage.style.setProperty('--mow-reveal', '100%');
     stage.style.setProperty('--grass-growth', '1');
     stage.style.setProperty('--word-opacity', '1');
@@ -74,7 +74,7 @@ if (stage) {
         const growth = cycleElapsed / GROW_MS;
         const eased = growth * growth * (3 - 2 * growth);
         brand.classList.add('is-growing');
-        brand.classList.remove('is-mowing', 'is-cutting');
+        brand.classList.remove('is-mowing');
         stage.style.setProperty('--grass-growth', eased);
         stage.style.setProperty('--word-opacity', 1 - eased);
         stage.style.setProperty('--mow-reveal', '100%');
@@ -101,11 +101,9 @@ if (stage) {
       const head = progress < .18 ? 0 : progress < .34 ? 1 : progress < .7 ? 2 : progress < .9 ? 3 : 0;
       stage.style.setProperty('--mow-reveal', `${progress * 100}%`);
       stage.style.setProperty('--mower-x', `${x}px`);
-      stage.style.setProperty('--cut-x', `${wordLeft + (width - wordLeft) * progress}px`);
       stage.style.setProperty('--mower-opacity', opacity);
       stage.style.setProperty('--mower-bob', cutting ? `${Math.sin(elapsed / 75) * .65}px` : '0px');
       stage.dataset.progress = progress.toFixed(3);
-      brand.classList.toggle('is-cutting', cutting);
       setPose(cutting ? Math.floor((elapsed - 180) / 145) % 4 : 1, returning > 0 ? 2 : head);
       if (elapsed >= MOW_MS) { finish(); schedule(); return; }
       animationFrame = requestAnimationFrame(tick);
