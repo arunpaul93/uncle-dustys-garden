@@ -2,7 +2,7 @@
 
 ## Current mascot (29 October 2026)
 
-Use the illustrated man from the user-supplied Uncle Dusty's signature: orange-brown broad-brim hat with a green band, full grey and white beard, olive collared shirt and folded arms. The transparent asset is `dist/assets/uncle-dusty-signature.webp` (1275 x 1234, RGBA). It appears in the header, hero, footer and About us dialog. The hero remains an accessible button that opens About us immediately; the previous layered hand-wave animation has been removed to preserve the supplied pose.
+Use the illustrated man from the user-supplied Uncle Dusty's signature: orange-brown broad-brim hat with a green band, full grey and white beard, olive collared shirt and folded arms. The transparent asset is `dist/assets/uncle-dusty-signature.webp` (1275 x 1234, RGBA). It appears in the hero, footer and About us dialog. The navigation uses the matching mowing pose described below. The hero remains an accessible button that opens About us immediately; the previous layered hand-wave animation has been removed to preserve the supplied pose.
 
 The built-in image generation tool isolated the character from the supplied signature. All lettering, contact details and decorative artwork were excluded. Conversion to WebP changes the file format only and retains alpha transparency. The existing garden photograph, business content and contact details are retained.
 
@@ -11,6 +11,16 @@ The local checkout is `uncle-dustys-site`. GitHub is `arunpaul93/uncle-dustys-ga
 The current brand is Uncle Dusty's Garden, with 0483 313 425 and support@uncledustys.com.au. Do not invent attendance promises, biography, reviews, credentials or service coverage. Enquiries prepare an email draft that the visitor reviews and sends.
 
 Validation: JavaScript syntax and local asset references pass. The page and mascot return HTTP 200, with the mascot served as image/webp. Checked layouts at 1440, 768, 390 and 320 pixels without horizontal overflow. All four mascot instances load. Pointer and keyboard activation open About us, Escape restores focus, About us hands off to the enquiry form, and the mobile menu opens and closes. Browser console has no warnings or errors.
+
+## Navigation avatar (29 October 2026)
+
+The header uses `dist/assets/uncle-dusty-mowing.webp` (1254 x 1254, RGBA), showing the same Uncle Dusty holding a walk-behind mower. The built-in image generation tool edited the signature mascot; WebP conversion preserves transparency and the generated composition. Navigation sizing is 94 x 82 pixels on desktop, 68 x 63 on phones and 55 x 55 on narrow phones. The brand link keeps its accessible home label.
+
+Navigation validation: the avatar loads and the header has no horizontal overflow at 1280, 390 and 320 pixels. The brand and menu controls do not overlap. The mobile menu opens and closes. JavaScript syntax and diff whitespace checks pass.
+
+Final generation prompt:
+
+> Use case: identity-preserve. Asset type: compact transparent website navigation avatar. Edit the supplied Uncle Dusty mascot into a friendly action pose using a walk-behind lawnmower. Preserve this exact character's smiling face, full white and grey beard, dark eyebrows, orange-brown broad-brim gardening hat with a dark green band, olive green rolled-sleeve collared shirt, warm colors and bold dark cartoon outlines. Change only the pose and add the lawnmower: both hands naturally gripping the mower handle, Uncle Dusty standing behind and pushing a compact dark forest-green lawnmower with orange wheels. Three-quarter front view, face and hat clearly visible and large, compact balanced near-square silhouette designed to remain recognizable as a small navbar avatar. Show head, upper body, both hands, handle and the complete mower with its wheels; lower legs may be hidden behind mower. Keep all hat and mower edges inside the image with tight but safe transparent margins. Make the mower clearly recognizable and visibly connected to his hands through its handle. Same polished flat cartoon illustration as the reference, simple large shapes. Real alpha-transparent background, no white rectangle, no badge, no grass patch or scenery, no text, no other people, no extra tools, no apron, no watermark.
 
 ## Historical implementation notes (superseded where different above)
 

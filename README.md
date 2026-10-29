@@ -15,7 +15,7 @@ The deployment runs `node scripts/version-assets.mjs` to fingerprint the CSS and
 ## Features
 
 - Responsive garden palette, handwritten accents, a mascot and clear service cards.
-- Local WebP garden photograph and the supplied signature character in the header, homepage, footer and About us dialog. Activating the homepage mascot opens About us immediately, preserving his folded-arms pose.
+- Local WebP garden photograph and a lawnmower pose of the supplied character in the navigation bar, with the original signature pose in the homepage, footer and About us dialog. Activating the homepage mascot opens About us immediately, preserving his folded-arms pose.
 - Four visible service cards with contextual enquiry actions, followed by the process, contact details and practical FAQs.
 - Single-page enquiry with job details, required contact name and phone, optional email, prefilled enquiry email draft, and plain-text download.
 - Canvas lawn game with pointer, touch, arrow-key and guided-stripe controls; a larger completion banner appears above the finished lawn.

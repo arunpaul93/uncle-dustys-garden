@@ -34,6 +34,7 @@ body{background-image:radial-gradient(ellipse at 4% 15%,#4b41281a,transparent 46
 
 /* The signature character keeps his original folded-arms pose. */
 .brand>.brand-mascot{width:64px;height:74px;object-fit:contain;flex:none}
+.site-header .brand>.brand-mascot{width:94px;height:82px}
 .footer-top>.brand>.brand-mascot{width:58px;height:68px}
 .dusty-hello{height:210px;margin-bottom:16px}
 .dusty-button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;height:100%;padding:0 0 8px;border:0;background:transparent;isolation:isolate}
@@ -65,3 +66,5 @@ body{background-image:radial-gradient(ellipse at 4% 15%,#4b41281a,transparent 46
 
 @media(max-width:650px){.brand>.brand-mascot,.footer-top>.brand>.brand-mascot{width:50px;height:63px}}
 @media(max-width:370px){.brand>.brand-mascot{width:43px;height:55px}}
+@media(max-width:650px){.site-header .brand>.brand-mascot{width:68px;height:63px}}
+@media(max-width:370px){.site-header .brand>.brand-mascot{width:55px;height:55px}}
