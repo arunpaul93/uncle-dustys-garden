@@ -24,10 +24,10 @@ Replace the rounded editorial sans / italic serif pairing with condensed workwea
 Keep headlines within the viewport; change the composition intentionally on phones. Annotations must not cover controls or meaningful content. Maintain visible focus, native dialog behavior, accessible form labels and keyboard tabs, reduced-motion support, and keyboard/guided alternatives for the canvas.
 
 ## Scope and honest content
-The user supplied the Uncle Dusty?s Garden brand, 0483 313 425, and support@uncledustys.com.au. Service area and real rates are not supplied. The enquiry uses job details, contact name, required phone and optional email; no price is calculated. The job sheet prepares an email draft for the visitor to send and retains a downloadable copy. Preserve the existing Site identity and owner-private audience. No new imagery required.
+The user supplied the Uncle Dusty?s Garden brand, 0483 313 425, and support@uncledustys.com.au. Service area and real rates are not supplied. The enquiry uses job details, contact name, required phone and optional email; no price is calculated. The job sheet prepares an email draft for the visitor to send and retains a downloadable copy. Use the supplied signature character as the mascot. Host locally and through the existing GitHub Pages repository only.
 
 ## Validation
-Review desktop, tablet and mobile screenshots. Check overflow at 1440, 768, 390 and 320 pixels. Exercise service expansion and preselected quote handoff, quote completion, seasonal keyboard navigation, and mowing progress/reset. Re-run JavaScript syntax validation. Publish the exact verified source through Sites.
+Review desktop, tablet and mobile screenshots. Check overflow at 1440, 768, 390 and 320 pixels. Exercise service expansion and preselected quote handoff, quote completion, seasonal keyboard navigation, and mowing progress/reset. Re-run JavaScript syntax validation. Publish the exact verified source through the GitHub Pages workflow on master.
 
 ## Image production record
 Built-in image generation. Asset: dist/assets/garden-hero.webp.

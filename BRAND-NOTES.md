@@ -1,5 +1,19 @@
 # Uncle Dusty’s Garden — brand notes
 
+## Current mascot (29 October 2026)
+
+Use the illustrated man from the user-supplied Uncle Dusty's signature: orange-brown broad-brim hat with a green band, full grey and white beard, olive collared shirt and folded arms. The transparent asset is `dist/assets/uncle-dusty-signature.webp` (1275 x 1234, RGBA). It appears in the header, hero, footer and About us dialog. The hero remains an accessible button that opens About us immediately; the previous layered hand-wave animation has been removed to preserve the supplied pose.
+
+The built-in image generation tool isolated the character from the supplied signature. All lettering, contact details and decorative artwork were excluded. Conversion to WebP changes the file format only and retains alpha transparency. The existing garden photograph, business content and contact details are retained.
+
+The local checkout is `uncle-dustys-site`. GitHub is `arunpaul93/uncle-dustys-garden`, with `master` deployed to uncledustys.com.au through GitHub Pages. Saved deployment archives also use Uncle Dusty's naming. Keep email DNS unchanged and do not create or publish a ChatGPT Site.
+
+The current brand is Uncle Dusty's Garden, with 0483 313 425 and support@uncledustys.com.au. Do not invent attendance promises, biography, reviews, credentials or service coverage. Enquiries prepare an email draft that the visitor reviews and sends.
+
+Validation: JavaScript syntax and local asset references pass. The page and mascot return HTTP 200, with the mascot served as image/webp. Checked layouts at 1440, 768, 390 and 320 pixels without horizontal overflow. All four mascot instances load. Pointer and keyboard activation open About us, Escape restores focus, About us hands off to the enquiry form, and the mobile menu opens and closes. Browser console has no warnings or errors.
+
+## Historical implementation notes (superseded where different above)
+
 ## Current content direction
 
 Arm-joint correction: the stationary body mask follows the inside sleeve edge and extends under the moving elbow, keeping the cuff connected at both ends of the wave. The hand mask follows the thumb/wrist outline to exclude detached shoulder pixels. Checked enlarged neutral, inward and outward wave poses against a contrasting background before publication.

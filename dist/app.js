@@ -13,37 +13,11 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') {menu.setAttr
 const mascot = $('.dusty-button'), aboutDialog = $('#about-dialog');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 function syncDialogScroll() { document.body.classList.toggle('dialog-open', !!document.querySelector('dialog[open]')); }
-const wavingHand = $('.dusty-hand', mascot);
-let wavePending=false, waveTimeout, waveSequence=0;
-function cancelMascotWave() {
-  waveSequence++;
-  wavePending=false;
-  clearTimeout(waveTimeout);
-  mascot.classList.remove('is-waving');
-  mascot.removeAttribute('aria-busy');
-}
 function openAbout() {
   if (document.querySelector('dialog[open]')) return;
   aboutDialog.showModal(); syncDialogScroll(); $('.about-close').focus();
 }
-function finishMascotWave() {
-  if (!wavePending) return;
-  cancelMascotWave();
-  openAbout();
-}
-mascot.addEventListener('click', async () => {
-  if (wavePending || aboutDialog.open) return;
-  if (reducedMotion.matches) {openAbout(); return;}
-  wavePending=true;
-  mascot.setAttribute('aria-busy','true');
-  const sequence=++waveSequence;
-  try {await wavingHand.decode();} catch {if(sequence===waveSequence) finishMascotWave(); return;}
-  if (sequence!==waveSequence) return;
-  mascot.classList.add('is-waving');
-  waveTimeout=setTimeout(finishMascotWave,1400);
-});
-wavingHand.addEventListener('animationend', e => {if(e.animationName==='dusty-hand-wave') finishMascotWave();});
-document.addEventListener('keydown', e => {if(e.key==='Escape' && wavePending) cancelMascotWave();});
+mascot.addEventListener('click', openAbout);
 $('.about-close').addEventListener('click', () => aboutDialog.close());
 aboutDialog.addEventListener('click', e => {
   if (e.target !== aboutDialog) return;
@@ -57,7 +31,6 @@ const dialog = $('#quote-dialog'), form = $('#quote-form');
 const serviceNames = { mowing:'Lawn mowing & edging', garden:'Hedges & garden care', cleanup:'Weeding & clean-ups', regular:'Regular garden care' };
 let requestText = '', returnFocus, suggestedDetails = '';
 function openQuote(service) {
-  cancelMascotWave();
   returnFocus = aboutDialog.open ? mascot : document.activeElement;
   if (aboutDialog.open) aboutDialog.close();
   form.hidden = false; $('#quote-success').hidden = true;

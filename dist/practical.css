@@ -32,21 +32,16 @@ body{background-image:radial-gradient(ellipse at 4% 15%,#4b41281a,transparent 46
 .service-card,.contact-card,.season-note{box-shadow:0 12px 26px #243c2914,3px 4px 0 #243c2912}
 .hero-visual{box-shadow:0 12px 32px #243c2921}.photo-caption{box-shadow:0 6px 17px #243c2926}
 
-/* A gentle elbow swing carries the forearm, with a slightly delayed wrist wave. */
+/* The signature character keeps his original folded-arms pose. */
+.brand>.brand-mascot{width:64px;height:74px;object-fit:contain;flex:none}
+.footer-top>.brand>.brand-mascot{width:58px;height:68px}
 .dusty-hello{height:210px;margin-bottom:16px}
 .dusty-button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;height:100%;padding:0 0 8px;border:0;background:transparent;isolation:isolate}
-.dusty-figure{position:relative;display:block;width:160px;max-width:100%;aspect-ratio:1;flex-shrink:0;filter:drop-shadow(3px 6px 2px #24463518)}
-/* Positioning and clip paths live in index.html with the matching layer markup. */
-.dusty-button.is-waving .dusty-arm{animation:dusty-elbow-wave 1.05s ease-in-out both}
-.dusty-button.is-waving .dusty-hand{animation:dusty-hand-wave 1.05s ease-in-out both}
+.dusty-figure{display:block;width:160px;max-width:100%;aspect-ratio:1;flex-shrink:0;filter:drop-shadow(3px 6px 2px #24463518)}
+.dusty-figure>img{display:block;position:static;width:100%;height:100%;margin:0;object-fit:contain;object-position:center bottom;transform:none!important;filter:none}
 .dusty-invite{display:flex;align-items:center;gap:12px;margin-top:-2px;padding:7px 15px;border:1px solid #b8b69c;background:#fcf3dc;font:600 22px/1 var(--hand);box-shadow:2px 3px 0 #24463517;z-index:1}
-.dusty-action{font-size:8px;line-height:1.4;color:var(--muted);margin-top:7px;letter-spacing:.3px}
-.dusty-spark{position:absolute;color:var(--orange);pointer-events:none;opacity:0;scale:.3;transition:opacity .2s,scale .3s}
-.dusty-spark-one{font-size:30px;left:15%;top:24%}.dusty-spark-two{font-size:22px;right:15%;top:43%}
-.dusty-button.is-waving .dusty-spark{opacity:1;scale:1}
+.dusty-button:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
 .dusty-button:hover .dusty-invite,.dusty-button:focus-visible .dusty-invite{background:var(--forest);color:var(--cream)}
-@keyframes dusty-elbow-wave{0%,100%{rotate:0deg}15%{rotate:-5deg}35%{rotate:5deg}55%{rotate:-4deg}75%{rotate:4deg}90%{rotate:-2deg}}
-@keyframes dusty-hand-wave{0%,100%{rotate:0deg}20%{rotate:-12deg}40%{rotate:11deg}60%{rotate:-10deg}80%{rotate:9deg}}
 .about-dialog{width:min(590px,calc(100% - 28px));box-shadow:0 20px 100px #061a2670}
 .about-shell{padding:34px 38px 30px;position:relative}.about-mascot{height:160px;display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
 .about-mascot>img{height:160px;width:155px;object-fit:contain;transform-origin:50% 90%}.about-dialog[open] .about-mascot>img{animation:none}
@@ -64,6 +59,9 @@ body{background-image:radial-gradient(ellipse at 4% 15%,#4b41281a,transparent 46
 .season-tabs [role=tab][aria-selected=true]{background:var(--forest);color:#fff9e9;border-color:var(--forest);box-shadow:0 4px 0 #b65c3550}
 .season-icon{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
 @media(max-width:1000px){.lawn-done{grid-template-columns:1fr;padding:22px}.lawn-done .button{grid-column:1;grid-row:auto;justify-self:start}.lawn-done strong{font-size:40px}.season-tabs [role=tab]{font-size:21px;padding-inline:3px}}
-@media(max-width:650px){.dusty-hello{height:210px;align-self:center}.dusty-figure{width:157px;max-width:100%}.dusty-invite{font-size:22px;padding:7px 12px}.dusty-action{font-size:7px}.dusty-spark-one{left:0;top:20%}.dusty-spark-two{right:0;top:45%}.about-shell{padding:32px 24px 25px}.about-mascot{height:132px;gap:10px}.about-mascot>img{height:132px;width:125px}.about-mascot>.handwritten{font-size:30px}.about-shell h2{font-size:52px}.about-shell>p{font-size:11px}.lawn-done{padding:22px 18px;gap:12px;margin-bottom:16px}.lawn-done strong{font-size:38px}.lawn-done p{font-size:11px}.lawn-done .button{font-size:10px;padding:12px 14px}.season-tabs{gap:7px}.season-tabs [role=tab]{font-size:22px;min-height:96px;padding:12px 3px}.season-icon{width:27px;height:27px}.contact-card>.handwritten{font-size:32px}}
-@media(max-width:370px){.dusty-invite{font-size:20px}.dusty-action{font-size:6.5px}.lawn-done strong{font-size:34px}.season-tabs{gap:5px}.season-tabs [role=tab]{font-size:20px}.about-mascot{justify-content:flex-start}.about-shell{padding-inline:21px}}
-@media(prefers-reduced-motion:reduce){.dusty-button.is-waving .dusty-arm,.dusty-button.is-waving .dusty-hand{animation:none;rotate:none}.dusty-spark,.season-tabs [role=tab]{transition:none}}
+@media(max-width:650px){.dusty-hello{height:210px;align-self:center}.dusty-figure{width:157px;max-width:100%}.dusty-invite{font-size:22px;padding:7px 12px}.about-shell{padding:32px 24px 25px}.about-mascot{height:132px;gap:10px}.about-mascot>img{height:132px;width:125px}.about-mascot>.handwritten{font-size:30px}.about-shell h2{font-size:52px}.about-shell>p{font-size:11px}.lawn-done{padding:22px 18px;gap:12px;margin-bottom:16px}.lawn-done strong{font-size:38px}.lawn-done p{font-size:11px}.lawn-done .button{font-size:10px;padding:12px 14px}.season-tabs{gap:7px}.season-tabs [role=tab]{font-size:22px;min-height:96px;padding:12px 3px}.season-icon{width:27px;height:27px}.contact-card>.handwritten{font-size:32px}}
+@media(max-width:370px){.dusty-invite{font-size:20px}.lawn-done strong{font-size:34px}.season-tabs{gap:5px}.season-tabs [role=tab]{font-size:20px}.about-mascot{justify-content:flex-start}.about-shell{padding-inline:21px}}
+@media(prefers-reduced-motion:reduce){.season-tabs [role=tab]{transition:none}}
+
+@media(max-width:650px){.brand>.brand-mascot,.footer-top>.brand>.brand-mascot{width:50px;height:63px}}
+@media(max-width:370px){.brand>.brand-mascot{width:43px;height:55px}}
