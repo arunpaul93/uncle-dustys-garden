@@ -7,6 +7,8 @@ on:
       - "dist/**"
       - ".github/workflows/pages.yml"
       - "scripts/version-assets.mjs"
+      - "tests/**"
+      - "package.json"
   workflow_dispatch:
 
 permissions:
@@ -27,10 +29,8 @@ jobs:
     steps:
       - name: Check out website
         uses: actions/checkout@v6
-      - name: Check JavaScript syntax
-        run: |
-          node --check dist/app.js
-          node --check dist/brand-mowing.js
+      - name: Check JavaScript and mascot motion
+        run: npm run check
       - name: Version browser assets
         run: node scripts/version-assets.mjs
       - name: Configure GitHub Pages

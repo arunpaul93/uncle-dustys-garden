@@ -15,7 +15,7 @@ The deployment runs `node scripts/version-assets.mjs` to fingerprint the CSS and
 ## Features
 
 - Responsive garden palette, handwritten accents, a mascot and clear service cards.
-- Local WebP garden photograph and an animated navigation logo: Uncle Dusty walks behind a mower, turns his head and cuts grass to reveal the wordmark. The grass regrows and is cut again in a continuous loop, with a pause/resume button, static fallbacks and reduced-motion support. The original signature pose remains in the homepage, footer and About us dialog; activating the homepage mascot opens About us.
+- Local WebP garden photograph and an animated navigation logo: Uncle Dusty walks behind a mower, turns his head and cuts grass to reveal the wordmark. Smooth articulated legs keep planted boots on the ground, and both wheel hubs rotate with the distance travelled. The grass regrows and is cut again in a continuous loop, with a pause/resume button, static fallbacks and reduced-motion support. The original signature pose remains in the homepage, footer and About us dialog; activating the homepage mascot opens About us.
 - Four visible service cards with contextual enquiry actions, followed by the process, contact details and practical FAQs.
 - Single-page enquiry with job details, required contact name and phone, optional email, prefilled enquiry email draft, and plain-text download.
 - Canvas lawn game with pointer, touch, arrow-key and guided-stripe controls; a larger completion banner appears above the finished lawn.

@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "node server.mjs",
-    "check": "node --check dist/app.js && node --check dist/brand-mowing.js"
+    "check": "node --check dist/app.js && node --check dist/brand-mowing.js && node --test tests/brand-motion.test.mjs"
   }
 }
