@@ -4,7 +4,7 @@ A custom, buildless garden maintenance website personalised for Uncle Dusty. The
 
 ## Run
 
-From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaScript syntax check: `node --check dist/app.js`. No dependencies or build step required. Deploy the `dist` directory as a static website.
+From this directory, run `node server.mjs` and open http://127.0.0.1:4173. JavaScript syntax checks: `node --check dist/app.js` and `node --check dist/brand-mowing.js`. No dependencies or build step required. Deploy the `dist` directory as a static website.
 
 ## Hosting
 
@@ -15,7 +15,7 @@ The deployment runs `node scripts/version-assets.mjs` to fingerprint the CSS and
 ## Features
 
 - Responsive garden palette, handwritten accents, a mascot and clear service cards.
-- Local WebP garden photograph and a lawnmower pose of the supplied character in the navigation bar, with the original signature pose in the homepage, footer and About us dialog. Activating the homepage mascot opens About us immediately, preserving his folded-arms pose.
+- Local WebP garden photograph and an animated navigation logo: Uncle Dusty walks behind a mower, turns his head and cuts grass to reveal the wordmark. It plays once and replays on hover or keyboard focus, with static fallbacks and reduced-motion support. The original signature pose remains in the homepage, footer and About us dialog; activating the homepage mascot opens About us.
 - Four visible service cards with contextual enquiry actions, followed by the process, contact details and practical FAQs.
 - Single-page enquiry with job details, required contact name and phone, optional email, prefilled enquiry email draft, and plain-text download.
 - Canvas lawn game with pointer, touch, arrow-key and guided-stripe controls; a larger completion banner appears above the finished lawn.
@@ -28,4 +28,4 @@ Brand and contacts were supplied by the user: Uncle Dusty's Garden, 0483 313 425
 
 ## Source
 
-`dist/index.html`: content and semantics. `dist/style.css`: original noticeboard system. `dist/dusty.css`: Uncle Dusty branding and responsive personalisation. `dist/practical.css`: clearer service cards, restrained headings and business-first layout. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.github/workflows/pages.yml`: GitHub Pages deployment configuration.
+`dist/index.html`: content and semantics. `dist/style.css`: original noticeboard system. `dist/dusty.css`: Uncle Dusty branding and responsive personalisation. `dist/practical.css`: clearer service cards, restrained headings and business-first layout. `dist/brand-mowing.css` and `dist/brand-mowing.js`: the navigation logo's grass reveal, walking and head-turn animation. `dist/quote.css`: base quote sheet styling. `dist/app.js`: interactions. `.github/workflows/pages.yml`: GitHub Pages deployment configuration.

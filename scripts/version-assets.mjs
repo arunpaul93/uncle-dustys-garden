@@ -5,7 +5,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const dist = new URL('../dist/', import.meta.url);
 const index = new URL('index.html', dist);
 let html = await readFile(index, 'utf8');
-for (const asset of ['style.css', 'dusty.css', 'practical.css', 'app.js']) {
+for (const asset of ['style.css', 'dusty.css', 'practical.css', 'brand-mowing.css', 'app.js', 'brand-mowing.js']) {
   const hash = createHash('sha256').update(await readFile(new URL(asset, dist))).digest('hex').slice(0, 12);
   const escaped = asset.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(`(href|src)="${escaped}(?:\\?[^\"]*)?"`, 'g');
