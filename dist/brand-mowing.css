@@ -1,9 +1,20 @@
-/* A single short mowing pass reveals the wordmark; it can replay on focus or hover. */
+/* Grass regrows between mowing passes; the wordmark rests fully visible in each loop. */
+.brand-lockup{position:relative;flex:none;min-width:0}
+.brand-animation-toggle{position:absolute;right:2px;bottom:3px;z-index:5;display:grid;place-items:center;width:24px;height:24px;padding:4px;border:1px solid #24463560;border-radius:50%;color:var(--forest);background:var(--cream);opacity:.65}
+.brand-animation-toggle[hidden]{display:none}
+.brand-animation-toggle:hover,.brand-animation-toggle:focus-visible{opacity:1;border-color:var(--forest)}
+.brand-animation-toggle svg{grid-area:1/1;width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round}
+.brand-animation-toggle .brand-play-icon{display:none;fill:currentColor;stroke:none}
+.brand-animation-toggle[aria-pressed=true] .brand-pause-icon{display:none}
+.brand-animation-toggle[aria-pressed=true] .brand-play-icon{display:block}
 .site-header .brand-mow{display:block;flex:none;min-width:0}
 .brand-mow>.brand-mow-stage{--mow-reveal:100%;--mower-x:0px;--mower-opacity:1;--mower-bob:0px;--walk-frame:33.333333%;--head-frame:66.666667%;--word-left:100px;--mower-height:116px;--mower-ratio:.75;display:block;position:relative;width:300px;height:100px;overflow:hidden;isolation:isolate;font:400 12px/1 var(--body);letter-spacing:0;text-transform:none}
-.brand-mow .brand-words{display:grid;justify-items:start;position:absolute;left:var(--word-left);top:5px;right:0;line-height:1;letter-spacing:0;text-transform:none;white-space:nowrap;clip-path:inset(0 calc(100% - var(--mow-reveal)) 0 0);z-index:1}
+.brand-mow .brand-words{display:grid;justify-items:start;position:absolute;left:var(--word-left);top:5px;right:0;line-height:1;letter-spacing:0;text-transform:none;white-space:nowrap;clip-path:inset(0 calc(100% - var(--mow-reveal)) 0 0);opacity:var(--word-opacity,1);z-index:1}
 .brand-mow .brand-lawn{position:absolute;inset:2px 0 2px var(--word-left);clip-path:inset(0 0 0 var(--mow-reveal));visibility:hidden;z-index:2}
-.brand-mow .brand-grass{display:block;width:100%;height:100%}
+.brand-mow .brand-grass{display:block;width:100%;height:100%;transform:scaleY(var(--grass-growth,1));transform-origin:center bottom}
+.brand-mow.is-growing .brand-words{clip-path:none}
+.brand-mow.is-growing .brand-lawn{visibility:visible;clip-path:none}
+.brand-mow.is-growing .brand-cut-grass{opacity:1;clip-path:none}
 .brand-mow .brand-cut-grass{position:absolute;left:var(--word-left);right:0;bottom:2px;height:5px;background:repeating-linear-gradient(105deg,transparent 0 3px,#62833e 3px 4px,transparent 4px 7px),linear-gradient(transparent 3px,#62833e66 3px);clip-path:inset(0 calc(100% - var(--mow-reveal)) 0 0);opacity:0;z-index:1}
 .brand-mow .brand-mower{position:absolute;left:0;bottom:-18px;height:var(--mower-height);width:calc(var(--mower-height) * var(--mower-ratio));transform:translate3d(var(--mower-x),0,0);opacity:var(--mower-opacity);z-index:3;pointer-events:none}
 .brand-mow .brand-mower-figure{position:relative;display:block;width:100%;height:100%;transform:translateY(var(--mower-bob))}
@@ -25,6 +36,6 @@
 .brand-mow .brand-clippings i:nth-child(5){animation-delay:-.4s;height:6px}
 @keyframes brand-grass-clipping{0%{opacity:0;transform:translate(0,0) rotate(-20deg)}15%{opacity:1}100%{opacity:0;transform:translate(-17px,-19px) rotate(-160deg)}}
 @media(max-width:1100px) and (min-width:651px){.brand-mow>.brand-mow-stage{width:280px;--word-left:94px}}
-@media(max-width:650px){.brand-mow>.brand-mow-stage{width:214px;height:78px;--word-left:70px;--mower-height:90px}.brand-mow .brand-words{top:5px}.brand-mow .brand-mower{bottom:-14px}.brand-mow .brand-cut-grass{height:4px;bottom:0}}
+@media(max-width:650px){.brand-mow>.brand-mow-stage{width:214px;height:78px;--word-left:70px;--mower-height:90px}.brand-mow .brand-words{top:5px}.brand-mow .brand-mower{bottom:-14px}.brand-mow .brand-cut-grass{height:4px;bottom:0}.brand-animation-toggle{bottom:-11px}}
 @media(max-width:370px){.brand-mow>.brand-mow-stage{width:185px;height:70px;--word-left:62px;--mower-height:81px}.brand-mow .brand-words{top:4px}.brand-mow .brand-mower{bottom:-12px}}
-@media(prefers-reduced-motion:reduce){.brand-mow .brand-words{clip-path:none!important}.brand-mow .brand-lawn,.brand-mow .brand-cut-grass,.brand-mow .brand-clippings{display:none!important}.brand-mow .brand-mower{transform:none!important;opacity:1!important}.brand-mow .brand-mower-figure{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.brand-mow .brand-words{clip-path:none!important;opacity:1!important}.brand-mow .brand-lawn,.brand-mow .brand-cut-grass,.brand-mow .brand-clippings{display:none!important}.brand-mow .brand-mower{transform:none!important;opacity:1!important}.brand-mow .brand-mower-figure{transform:none!important}}
