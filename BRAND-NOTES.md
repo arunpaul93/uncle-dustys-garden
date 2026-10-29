@@ -1,5 +1,9 @@
 # Uncle Dusty’s Garden — brand notes
 
+## Heading punctuation
+
+Use headings without full stops, including the hero, section titles, dialogs, game labels and seasonal titles. Keep normal sentence punctuation in body copy.
+
 ## Current mascot (29 October 2026)
 
 Use the illustrated man from the user-supplied Uncle Dusty's signature: orange-brown broad-brim hat with a green band, full grey and white beard, olive collared shirt and folded arms. The transparent asset is `dist/assets/uncle-dusty-signature.webp` (1275 x 1234, RGBA). It appears in the hero, footer and About us dialog. The navigation uses the matching mowing pose described below. The hero remains an accessible button that opens About us immediately; the previous layered hand-wave animation has been removed to preserve the supplied pose.
